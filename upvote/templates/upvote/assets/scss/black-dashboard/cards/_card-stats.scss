@@ -1,0 +1,74 @@
+%card-stats{
+  hr{
+    margin: 5px 15px;
+  }
+}
+
+.card-stats{
+    @extend %card-stats;
+
+   .info-icon{
+     height: 50px;
+     width: 50px;
+     border-radius: 50%;
+     @include diagonal-gradient($primary-color,$primary-states-color);
+
+     i{
+       color: $white-color;
+       font-size: 1.7em;
+       padding: 14px 13px;
+
+     }
+
+     &.icon-danger{
+       @include diagonal-gradient($danger-color,$danger-states-color);
+     }
+
+     &.icon-warning{
+       @include diagonal-gradient($warning-color,$warning-states-color);
+     }
+
+     &.icon-success{
+       @include diagonal-gradient($success-color,$success-states-color);
+     }
+
+     &.icon-info{
+       @include diagonal-gradient($info-color,$info-states-color);
+     }
+
+     &.icon-primary{
+       @include diagonal-gradient($primary-color,$primary-states-color);
+     }
+   }
+
+   .numbers{
+     text-align: right;
+     .card-title{
+       margin-top: 0;
+     }
+     .card-category{
+       margin-bottom: 0;
+       color: $dark-gray;
+     }
+   }
+
+   .card-footer{
+     padding: 0;
+   }
+
+   hr{
+     border-color: lighten($black-color,5%);
+   }
+
+   .stats{
+     color: rgba($white-color, 0.6);
+     margin: 10px 15px;
+     font-size: 0.9em;
+   }
+
+  &.card-white {
+    hr{
+      border-color: rgba(43, 53, 83, 0.2)
+    }
+  }
+}

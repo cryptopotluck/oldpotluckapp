@@ -1,0 +1,89 @@
+{% extends "blog/base.html" %}
+{% block content %}
+<center><button class="btn btn-outline-light"> <h1><font color="#f0ffff">🤖 Bot Tweaking</font></h1></button></center>
+    <br/>
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="{% url 'Potluck:Home' %}">🦅 Potluck</a></li>
+    <li class="breadcrumb-item"><a href="{% url 'Potluck:Bull News' %}">🐂 Bull News</a></li>
+    <li class="breadcrumb-item "><a href="{% url 'Potluck:BotTweaking' %}">🐻 Bear News</a></li>
+      <li class="breadcrumb-item "><a href="{% url 'Potluck:PoliticalNews' %}">📰 Political News</a></li>
+      <li class="breadcrumb-item "><a href="{% url 'Potluck:Shit News' %}">💩 Shitcoin & News</a></li>
+  </ol>
+</nav>
+{% for post in posts.all %}
+        <div class="card">
+        <div class="row">
+            <div class="col-3 px-5">
+                {{ post.Main_Pair }} / {{ post.Altcoin }}
+            </div>
+            <div class="col-6">
+
+            </div>
+            <div class="col-3">
+                {{ post.sub_feed }}
+            </div>
+
+        </div>
+
+
+        </div>
+        <div class="card">
+        <center><img class="rounded-circle article-img" src="{{ post.author.profile.image.url }}"></center>
+           <center><font class="font-italic">{{ post.author }}</font></center>
+        <div class="accordion" id="accordionExample">
+  <div class="card">
+    <div class="card-header" id="heading{{ post.id }}">
+      <h5 class="mb-0">
+      <center>  <button class="btn btn-link px--5" type="button" data-toggle="collapse" data-target="#collapse{{ post.id }}" aria-expanded="true" aria-controls="collapse{{ post.id }}">
+        <b> {{ post.title }}</b>
+        </button></center>
+      </h5>
+    </div>
+
+    <div id="collapse{{ post.id }}" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+      <div class="card-body">
+          <div class="row">
+          <div class="col-8">
+
+
+<center>{{ post.body }}</center>
+          </div>
+              <div class="col-4">
+                  <div class="collapse show" id="collapseExample100" style="">
+
+
+                <div class="bd-example">
+                    <details onclose="">
+                    <summary>Tip Address</summary>
+                        <p></p>
+                   <button href="" class="btn-sm btn-secondary" type="button" data-toggle="collapse" data-target="#collapseExample{{ post.id }}" aria-expanded="false" aria-controls="collapseExample{{ post.id }}">
+             Under Construction
+            </button>
+                        <br>
+                </details>
+
+                <details onclose="">
+                 <summary>Links</summary>
+                    <p></p>
+                <a href="{{ post.url }}"> {{ post.url }} </a>
+
+                </details>
+                </div>
+
+
+
+
+            </div>
+              </div>
+
+      </div>
+    </div>
+  </div>
+        </div>
+        </div>
+        </div>
+        <br/>
+    {% endfor %}
+
+{% endblock %}

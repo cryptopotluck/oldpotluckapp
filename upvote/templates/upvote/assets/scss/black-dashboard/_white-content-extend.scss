@@ -1,0 +1,135 @@
+.white-content{
+  .progress-container, .progress-container.progress.sm{
+      .progress{
+        background: rgba($black-color,0.1);
+        box-shadow: 0 0 0 3px rgba($black-color,0.1);
+        .progress-value{
+          color: $default-color;
+        }
+      }
+
+      .progress-badge{
+        color: $black-states-color;
+      }
+  }
+  .bootstrap-select button.dropdown-toggle{
+    border-color: rgba($black-states-color,0.5);
+    .filter-option{
+      color: $black-states-color;
+    }
+
+    &:after{
+      color: $black-states-color;
+    }
+
+  }
+
+  //style for calendar
+
+  .fc-basic-view .fc-day-number, .fc-basic-view .fc-week-number {
+      padding: 2px;
+      color: $default-color;
+  }
+
+  .fc-unthemed .fc-today{
+    background: darken($background-white,10%);
+  }
+
+  .fc-unthemed .fc-content, .fc-unthemed .fc-divider, .fc-unthemed .fc-list-heading td, .fc-unthemed .fc-list-view, .fc-unthemed .fc-popover, .fc-unthemed .fc-row, .fc-unthemed tbody, .fc-unthemed td, .fc-unthemed th, .fc-unthemed thead {
+        border-color: #9499a7;
+    }
+
+   .fc-prev-button, .fc-next-button{
+     color: $default-color;
+     &:hover{
+       color: $default-color;
+     }
+   }
+
+   .fc button.btn-primary:not([data-action]):hover, .fc button:not([data-action]):hover {
+     box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
+   }
+
+   .full-page{
+     background: #f5f6fa;
+
+     h1, h2, h3, h4, h5, h6, p, ol li, ul li, pre {
+       color: $black-states-color;
+     }
+
+     .description{
+       color: $dark-gray;
+     }
+
+     .footer ul li a{
+       color: $black-states-color;
+     }
+
+     .footer .copyright{
+       color: $black-states-color;
+     }
+   }
+
+   .nav-pills .nav-item .nav-link:not(.active){
+     background: darken($background-white,10%);
+     color: $black-states-color;
+     &:hover{
+       background: darken($background-white,20%);
+
+     }
+   }
+
+   .card-pricing:not(.card-white){
+     ul li {
+        color: #fff;
+     }
+   }
+
+    .card:not(.card-pricing){
+
+      &.card-wizard{
+        .card-body{
+          background: $white-color;
+        }
+        .card-footer{
+          background-color: $white-color !important;
+        }
+
+        .nav-pills .nav-item .nav-link p{
+          color: $black-states-color;
+        }
+      }
+
+      &.card-stats {
+        hr{
+          border-color: rgba($black-states-color,0.1);
+        }
+        .card-title{
+          color: $black-states-color;
+        }
+        .card-category, .stats{
+          color: #808080;
+        }
+
+      }
+
+    }
+
+    .card-timeline .timeline>li.timeline-inverted>.timeline-panel{
+      background: $white-color;
+      .timeline-body p{
+        color: $black-states-color;
+      }
+
+      &:after, &:before{
+        border-right-color: $white-color;
+        border-left-color: $white-color;
+      }
+    }
+
+    .card-timeline .timeline:before{
+      background-color: $light-gray;
+    }
+
+
+   }

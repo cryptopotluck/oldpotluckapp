@@ -1,0 +1,106 @@
+/*!
+
+ =========================================================
+ * Black Dashboard Pro - v1.0.0
+ =========================================================
+
+ * Product Page: https://www.creative-tim.com/product/black-dashboard-pro
+ * Copyright 2018 Creative Tim (http://www.creative-tim.com)
+
+
+ =========================================================
+
+ * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+ */
+
+@import 'black-dashboard/variables';
+@import 'black-dashboard/mixins';
+
+
+// Plugins CSS
+@import 'black-dashboard/plugins/plugin-bootstrap-switch';
+@import 'black-dashboard/plugins/plugin-nouislider';
+@import 'black-dashboard/plugins/plugin-animate-bootstrap-notify';
+@import 'black-dashboard/plugins/plugin-perfect-scrollbar';
+@import 'black-dashboard/plugins/plugin-sweetalert2';
+@import 'black-dashboard/plugins/plugin-card-wizard';
+@import 'black-dashboard/plugins/plugin-datetimepicker';
+@import 'black-dashboard/plugins/plugin-bootstrap-select';
+@import 'black-dashboard/plugins/plugin-jasny-fileupload';
+@import 'black-dashboard/plugins/plugin-tagsinput';
+@import 'black-dashboard/plugins/plugin-datatables.net';
+@import 'black-dashboard/plugins/plugin-jquery.jvectormap';
+@import 'black-dashboard/plugins/plugin-fullcalendar';
+
+// Core CSS
+@import 'black-dashboard/buttons';
+@import 'black-dashboard/cards';
+@import 'black-dashboard/social-buttons';
+@import 'black-dashboard/inputs';
+@import 'black-dashboard/typography';
+@import 'black-dashboard/misc';
+@import 'black-dashboard/misc-extend';
+@import 'black-dashboard/navbar';
+@import 'black-dashboard/dropdown';
+@import 'black-dashboard/alerts';
+@import 'black-dashboard/images';
+@import 'black-dashboard/tables';
+@import 'black-dashboard/footers';
+@import 'black-dashboard/fixed-plugin';
+
+// components
+@import 'black-dashboard/checkboxes-radio';
+@import 'black-dashboard/progress';
+@import 'black-dashboard/badges';
+@import 'black-dashboard/pagination';
+@import 'black-dashboard/info-areas';
+@import 'black-dashboard/pills';
+@import 'black-dashboard/tabs';
+@import 'black-dashboard/popups';
+@import 'black-dashboard/modals';
+@import 'black-dashboard/carousel';
+@import 'black-dashboard/sidebar-and-main-panel';
+@import 'black-dashboard/rtl';
+@import 'black-dashboard/timeline';
+
+
+
+// cards
+@import 'black-dashboard/cards';
+@import "black-dashboard/cards/card-chart";
+@import "black-dashboard/cards/card-map";
+@import "black-dashboard/cards/card-user";
+@import "black-dashboard/cards/card-task";
+@import "black-dashboard/cards/card-animation-on-hover";
+
+@import "black-dashboard/cards/card-background";
+@import "black-dashboard/cards/card-collapse";
+@import "black-dashboard/cards/card-contributions";
+@import "black-dashboard/cards/card-info-area";
+@import "black-dashboard/cards/card-lock";
+@import "black-dashboard/cards/card-pricing";
+@import "black-dashboard/cards/card-profile";
+@import "black-dashboard/cards/card-signup";
+@import "black-dashboard/cards/card-stats-mini";
+@import "black-dashboard/cards/card-stats";
+@import "black-dashboard/cards/card-subcategories";
+@import "black-dashboard/cards/card-testimonials";
+@import "black-dashboard/cards/card-wizard";
+
+
+
+// example pages and sections
+@import 'black-dashboard/example-pages';
+@import 'black-dashboard/sections';
+
+
+@import 'black-dashboard/responsive';
+@import 'black-dashboard/responsive';
+@import 'black-dashboard/media-queries';
+
+
+// Dashboard white class
+
+@import 'black-dashboard/white-content';
+@import 'black-dashboard/white-content-extend';

@@ -1,0 +1,208 @@
+{% extends "blog/base.html" %}
+
+{% block content %}
+
+    {% if notfound %}
+
+
+
+
+
+    {% else %}
+   {% for key,value in crypto.DISPLAY.items %}
+
+
+
+
+<center><div class="row px-5">
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+      <div class="row">
+    <h5 class="card-title font-weight-bold px-3">{{ key }}</h5><font color="green"><p class="">{{ value.USD.PRICE }}</p> </font>
+  </div>
+    <div class="list-group" id="list-tab" role="tablist">
+      <a class="list-group-item list-group-item-action" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home"><strong>Day High</strong>:  {{ value.USD.HIGHDAY }}</a>
+      <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile"><strong>Day Low</strong>:  {{ value.USD.LOWDAY }}</a>
+      <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages"><strong>24h High</strong>: {{ value.USD.HIGH24HOUR }}</a>
+      <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings"><strong>24h Low</strong>: {{ value.USD.LOW24HOUR }}</a>
+    </div>
+  </div>
+</div>
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+      <div class="row">
+
+          <h5 class="card-title font-weight-bold px-3">____________________________ </h5>
+  </div>
+    <div class="list-group" id="list-tab" role="tablist">
+      <a class="list-group-item list-group-item-action" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home"><strong>MarketCap</strong>:  {{ value.USD.MKTCAP }}</a>
+      <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile"><strong>24hr Volume</strong>:  {{ value.USD.TOTALVOLUME24HTO }}</a>
+      <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages"><strong>24hr Volume </strong>: {{ value.USD.TOTALVOLUME24H }}</a>
+      <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings"><strong>Change 24h </strong>: {{ value.USD.CHANGE24HOUR }}</a>
+    </div>
+  </div>
+</div>
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+      <div class="row">
+
+          <h5 class="card-title font-weight-bold px-3">____________________________ </h5>
+  </div>
+    <div class="list-group" id="list-tab" role="tablist">
+      <a class="list-group-item list-group-item-action" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home"><center><strong>Social Media</strong></center></a>
+      <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile"><center><strong>White Paper</strong></center></a>
+      <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages"><strong> &nbsp;  </strong></a>
+      <a class="list-group-item list-group-item-action active" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings"><center><strong>Battle Station</strong></center></a>
+    </div>
+  </div>
+</div>
+</div></center>
+       <br/>
+
+       <div class="container h-50">
+
+       <div class="tradingview-widget-copyright"><a href="" rel="noopener" target="_blank"><span class="blue-text"></span></a></div>
+  <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+  <script type="text/javascript">
+  new TradingView.widget(
+       {
+
+            symbol: "BINANCE:{{ key | upper}}BTC",
+
+
+           interval: "D",
+           timezone: "Etc/UTC",
+           theme: "Dark",
+           style: "1",
+           enable_publishing: false,
+           toolbar_bg: "#f1f3f6",
+           withdateranges: true,
+           hide_side_toolbar: false,
+           allow_symbol_change: true,
+           save_image: false,
+           studies: [
+               "StochasticRSI@tv-basicstudies",
+               "IchimokuCloud@tv-basicstudies",
+           ],
+           show_popup_button: true,
+           popup_width: "1000",
+           popup_height: "300",
+           locale: "en",
+           autosize: true
+       }
+  );
+  </script>
+
+       </div>
+       <br/>
+       <div class="container-fluid">
+
+
+
+       {% for post in posts.all%}
+        <div class="card">
+        <div class="row">
+            <div class="col-3 px-5">
+                {{ post.Main_Pair }} / {{ post.Altcoin }}
+            </div>
+            <div class="col-6">
+
+            </div>
+            <div class="col-3">
+                {{ post.sub_feed }}
+            </div>
+
+        </div>
+
+
+        </div>
+        <div class="card">
+        <center><img class="rounded-circle article-img" src="{{ post.author.profile.image.url }}"></center>
+           <center><font class="font-italic">{{ post.author }}</font>: {{ post.votes_total }}</center>
+        <div class="accordion" id="accordionExample">
+  <div class="card">
+    <div class="card-header" id="heading{{ post.id }}">
+      <h5 class="mb-0">
+
+      <center>  <button class="btn btn-link px--5" type="button" data-toggle="collapse" data-target="#collapse{{ post.id }}" aria-expanded="true" aria-controls="collapse{{ post.id }}">
+        <b> {{ post.title }}</b>
+        </button></center>
+      </h5>
+    </div>
+
+    <div id="collapse{{ post.id }}" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+      <div class="card-body">
+          <div class="row">
+          <div class="col-8">
+
+
+<center>{{ post.body }}</center>
+          </div>
+              <div class="col-4">
+                  <div class="collapse show" id="collapseExample{{ post.id }}" style="">
+
+{{ post.pub_date }}
+                <div class="bd-example">
+                    <details onclose="">
+                    <summary>Tip Address</summary>
+                        <p></p>
+                   <button href="" class="btn-sm btn-secondary" type="button" data-toggle="collapse" data-target="#collapseExample{{ post.id }}" aria-expanded="false" aria-controls="collapseExample{{ post.id }}">
+             Under Construction
+            </button>
+                        <br>
+                </details>
+
+                <details onclose="">
+                 <summary>Links</summary>
+                    <p></p>
+                <a href="{{ post.url }}"> {{ post.url }} </a>
+
+                </details>
+                </div>
+
+
+
+
+            </div>
+              </div>
+
+      </div>
+          <br/>
+          <div class="row">
+              <div class="col">
+                  <form method="POST" action="{% url 'Potluck:downvote' post.id %}">
+                      {% csrf_token %}
+               <center> <button type="submit" value="DOWN" class="btn btn-outline-danger">Down Vote</button></center>
+             </form>
+              </div>
+              <div class="col">
+                  <form method="POST" action="{% url  'Potluck:upvote' post.id %}">
+                      {% csrf_token %}
+                  <center><button type="submit" value="UP" class="btn btn-outline-success">Up Vote</button></center>
+                  </form>
+              </div>
+          </div>
+    </div>
+  </div>
+        </div>
+        </div>
+        </div>
+        <br/>
+
+{% endfor %}
+       </div>
+
+        <strong>Name</strong>: {{ key }}<br/>
+    <strong>Prices</strong>: {{ value.USD.PRICE }}
+    <strong>Day High</strong>: {{ value.USD.HIGHDAY }}
+    <strong>24hr High</strong>: {{ value.USD.HIGH24HOUR }}
+    <strong>Market Cap</strong>: {{ value.USD.MKTCAP }}
+
+       {{ value }}
+    {% endfor %}
+
+
+    {% endif %}
+<br/>
+
+{% endblock %}

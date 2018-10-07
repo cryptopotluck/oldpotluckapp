@@ -1,0 +1,237 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script type="text/javascript" id="www-widgetapi-script" src="https://s.ytimg.com/yts/jsbin/www-widgetapi-vflvi9no-/www-widgetapi.js" async=""></script>
+    <script src="https://www.youtube.com/iframe_api?v=3.0.20" id="YTAPI"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="generator" content="Mobirise v4.8.3, mobirise.com">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static 'blog/main.css' %}">
+
+    <!-- Theme CSS -->
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+
+
+
+
+
+
+    {% if title %}
+        <title>Potluck Blog - {{ title }}</title>
+    {% else %}
+        <title>Potluck Blog</title>
+    {% endif %}
+</head>
+<body>
+
+
+<header class="site-header">
+  <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand mr-4" href="{% url 'blog-home' %}"><img src="/media/ptluckecosystem.png" class="img-fluid"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarToggle">
+        <div class="navbar-nav mr-auto">
+          <a class="nav-item nav-link" href="{% url 'blog-about' %}">Community Investment</a>
+        </div>
+        <!-- Navbar Right Side -->
+        <div class="navbar-nav">
+            {% if user.is_authenticated %}
+                <a class="nav-item nav-link" href="{% url 'Potluck:NewPost' %}">New Post</a>
+                <a class="nav-item nav-link" href="{% url 'profile' %}">Profile</a>
+                <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
+            {% else %}
+              <a class="nav-item nav-link" href="{% url 'login' %}">Login</a>
+              <a class="nav-item nav-link" href="{% url 'register' %}">Register</a>
+            {% endif %}
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+
+<main role="main" class="container-fluid">
+  <div class="row">
+    <div class="col-sm-3 my-1">
+        <div class="navbar-nav position-fixed">
+          <div id="accordion">
+
+  <div class="card">
+    <div class="card-header" id="headingOne">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+           <center><font color="#0d5881"><b>   Community <img class="img-fluid" src="/media/50'smanreadingoncouchBible.png"> Station</b></font></center>
+        </button>
+      </h5>
+    </div>
+    <div id="collapseOne" class="collapse">
+        <div class="card text-left">
+         <a href="{% url 'Noob' %}"><img class="img-fluid" src="/media/default.jpg">New Investor Info</a>
+         </div>
+        <div class="align-right px-sm-3">
+            <a href="{% url 'pollingapp:vote' %}"><img class="img-fluid align-right px-sm-1" src="/media/ballot-box-copy.png">Monthly Vote</a>
+         </div>
+
+         <dev class="align-right px-sm-3">
+            <a href="https://www.youtube.com/channel/UC-pBvv8mzLpj0k-RIbc2Nog?view_as=subscriber"><img class="img-fluid align-right px-sm-2" src="/media/Meputtinginwork%20(2).png">Youtube Channel</a>
+        </dev>
+
+        <dev class="align-right px-sm-3 row">
+            <a href="{% url 'Devlog' %}"><img class="img-fluid align-right px-sm-2" src="/media/chess3d2d.png"> Developer Log </a>
+        </dev>
+
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="card">
+    <div class="card-header" id="headingTwo">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            <img class="img-fluid" src="/media/research.png"><font color="#0d5881"><b>Research</b></font>
+        </button>
+      </h5>
+    </div>
+    <div id="collapseTwo" class="collapse">
+        <div class="card text-left">
+         <a href="http://www.potlucktrader.net/dashboard"><img class="img-fluid" src="/media/altcoinstation.png">  Altcoin Battle Station</a>
+         </div>
+        <dev class="align-right px-sm-3">
+            <a href="{% url 'news' %}"><img class="img-fluid align-right px-sm-2" src="/media/news.png"> Latest Articles </a>
+        </dev>
+        <div class="align-right px-md-5">
+            <a href="{% url 'Potluck:Home' %}">Contribute Information<img class="img-fluid align-right px-sm-1" src="/media/Puff%20Puff%20Pass%20Girls.png"></a>
+         </div>
+         <dev class="align-right px-sm-3 row">
+            <a href="{% url 'UnderConstruction'  %}"><img class="img-fluid align-right px-sm-2" src="/media/lightupman.jpg"> Search for Communities </a>
+        </dev>
+
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header" id="headingThree">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+             <font color="#0d5881"><img class="img-fluid" src="/media/the-holy-bible.png"> <b>Strategy Creation Lab</b></font>
+        </button>
+      </h5>
+    </div>
+    <div id="collapseThree" class="collapse">
+        <div class="align-right px-md-5">
+         <a href="{% url 'UnderConstruction' %}">  Portfolio Management<img class="img-fluid" src="/media/Template_holdingman.png"></a>
+         </div>
+        <div class="align-right px-md-5">
+            <a href="{% url 'fourcharts' %}"><img class="img-fluid align-right px-sm-1" src="/media/Amanwinking.png">Scripts & Strategies </a>
+         </div>
+
+         <dev class="align-right px-md-5">
+            <a href="{% url 'UnderConstruction' %}">Back Testing <img class="img-fluid align-right px-sm-2" src="/media/reportA+.png"></a>
+        </dev>
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header" id="headingFour">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+            <font color="#0d5881"><b> <img class="img-fluid" src="/media/auto-trade-robot-375b.png"> Trading Bots</b></font>
+        </button>
+      </h5>
+    </div>
+    <div id="collapseFour" class="collapse">
+        <div class="card align-right px-sm-4">
+         <a href="{% url 'blog-about' %}"><img class="img-fluid" src="/media/buisnessMan.png">Potluck Trading Bot</a>
+         </div>
+        <div class="align-right px-sm-5">
+            <a href="{% url 'shop' %}">Tested Affiliate Bots <img class="img-fluid align-right px-sm-1" src="/media/whatisthisman%20(1).png"></a>
+         </div>
+
+         <dev class="align-right px-sm-3">
+            <a href="https://www.udemy.com/cryptopotluck/learn/v4/overview"><img class="img-fluid align-right px-sm-2" src="/media/udemy.png">Bootcamp</a>
+        </dev>
+
+    </div>
+  </div>
+</div>
+
+            <div class="container">
+            <div class="row py-2">
+                <form class="form-inline my-2 my-lg-0" method="POST" action="{% url 'prices' %}">
+            {% csrf_token %}
+
+            <input class="form-control col-lg-8" type="search" placeholder="Lookup AltCoin" aria-label="Search" name="quote">
+            <button class="btn-secondary col-lg-4 py-1" type="submit">Search</button>
+                </form>
+            </div>
+                <iframe src="http://free.timeanddate.com/countdown/i6fytnt6/n770/cf111/cm0/cu4/ct0/cs0/ca0/cr0/ss0/cac000/cpc000/pct/tc099/fs100/szw320/szh135/tatTime%20Left%20Till%20Funding%20Launch%20Ends/tac000/tptTime%20is%20up%20/tpc000/matTogether%20we%20can%20build%20out%20value%20/mac000/mpc000/iso2018-10-15T00:00:00" allowTransparency="true" frameborder="0" width="320" height="135"></iframe>
+
+            </div>
+        </div>
+        </div>
+
+
+    <div class="col-md-8 my-2">
+      {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-{{ message.tags }}">
+                {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %}
+      {% block content %}{% endblock %}
+        </p>
+      </div>
+    </div>
+  </div>
+
+<script src="https://cdn.jsdelivr.net/npm/@widgetbot/crate@3">
+                      const crate = new Crate({
+                          server: '396334922522165248',
+                          channel: '396334922522165250',
+                          shard: 'https://cl2.widgetbot.io'
+                      })
+
+                      /*crate.notify('Test notification')
+                      crate.on('signIn', data => {
+                        console.log(`Guest signed in as ${data.name}`)
+                        crate.emit('sendMessage', 'Hello world')
+                      })*/
+                  </script>
+
+
+
+
+</main>
+
+
+    <!-- Optional JavaScript -->
+    <script scr="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <script scr='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js'></script>
+</body>
+</html>

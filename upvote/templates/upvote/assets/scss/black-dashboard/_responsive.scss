@@ -1,0 +1,34 @@
+
+
+@media screen and (min-width: 992px){
+  .sidebar-mini .sidebar{
+      display: block;
+      //width: 80px;
+      z-index: 1030;
+      .logo span{
+          font-size: 25px;
+      }
+
+      .sidebar-wrapper .user .info .collapsed span.sidebar-normal,
+      .sidebar-wrapper .user .info a[aria-expanded="true"] span.sidebar-normal,
+      .sidebar-wrapper .user .info a[aria-expanded="false"] span.sidebar-normal,
+      .sidebar-wrapper .user .info .collapse ul li a .sidebar-normal,
+      .sidebar-wrapper .nav  li a p,
+      .sidebar-wrapper .nav li .collapse ul li a .sidebar-normal
+      {
+          opacity: 0;
+      }
+      &:hover{
+          width: 230px;
+          .sidebar-wrapper .user .info .collapsed span.sidebar-normal,
+          .sidebar-wrapper .user .info a[aria-expanded="true"] span.sidebar-normal,
+      .sidebar-wrapper .user .info a[aria-expanded="false"] span.sidebar-normal,
+          .sidebar-wrapper .user .info .collapse ul li a .sidebar-normal,
+          .sidebar-wrapper .nav  li a p,
+          .sidebar-wrapper .nav li .collapse ul li a .sidebar-normal{
+          opacity: 1;
+      }
+
+      }
+  }
+}

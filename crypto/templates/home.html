@@ -1,0 +1,51 @@
+{% extends "blog/base.html" %}
+
+{% block content %}
+<div class="px-5">
+<div style="font-family: Verdana, Tahoma, Arial, sans-serif;font-size: 10px;color: #C9C6BD;text-align: right;padding:4px 4px 0px 4px;margin: 0;width: 100%;border: 1px solid #444!important;"><iframe src="https://widget.coinlib.io/widget?type=horizontal&theme=dark&pref_coin_id=1505&invert_hover=no" width="100%" height="22" scrolling="auto" marginwidth="0" marginheight="0" frameborder="0" border="0" style="border:0;margin:0;padding:0;"></iframe></div>
+    </div>
+    <br/>
+
+
+    <div class="row">
+        {% for x in api.Data %}
+            <div class="col-sm ">
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="{{ x.imageurl }}" alt="{{ x.source }}">
+            <center><h5 class="card-title">{{ x.title }}</h5></center>
+            <div class="container py-3">
+                <div class="col align-right offset-2">
+         <button  class="btn btn-outline-dark" type="button" data-toggle="collapse" data-target="#collapseExample{{ x.id }}" aria-expanded="false" aria-controls="collapseExample{{ x.id }}">
+         Quick Overview
+        </button></div>
+        <div class="collapse" id="collapseExample{{ x.id }}">
+
+      <div class="py-3">
+          <center>{{ x.body }}
+          <button class="btn btn-info" type="button" data-toggle="collapse" data-target="#collapseExample{{ x.id }}" aria-expanded="false" aria-controls="collapseExample{{ x.id }}">
+              <i class="far fa-caret-square-up"></i>
+          </button>
+          </center>
+      </div>
+  </div>
+
+
+            </div><p5 class="card-title">{{ x.published_on }}</p5>
+            <div class="card-footer row align-right px-4">
+                <div class="col">
+      <a href="{{ x.guid }}" class="btn btn-info btn-lg active" role="button" aria-pressed="true">Learn More</a>
+        </div>
+                <a href="" tabindex="0" class="btn btn-lg btn-outline-success" role="button" data-toggle="popover" data-trigger="focus" title="Dismissible popover" data-content="And here's some amazing content. It's very engaging. Right?"><i class="fas fa-chart-line"></i></a>
+
+        <a href="" tabindex="0" class="btn btn-lg btn-outline-danger" role="button" data-toggle="popover" data-trigger="focus" title="Dismissible popover" data-content="And here's some amazing content. It's very engaging. Right?"><i class="fas fa-trash-alt"></i></a>
+    </div>
+        </div>
+
+            <br/>
+            </div>
+            {% endfor %}
+    </div>
+    </div>
+
+
+{% endblock %}

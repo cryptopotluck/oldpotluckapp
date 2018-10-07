@@ -1,0 +1,99 @@
+{% extends "blog/base.html" %}
+{% block content %}
+
+    <div class="row">
+
+
+    </div>
+    <div class="row">
+        <div class="col-9">
+            <div class="card">
+                <form method="POST" action="{% url 'Potluck:NewPost' %}">
+                    {% csrf_token %}
+  <div class="form-group">
+   <center> <label for="exampleFormControlTextarea1"><b>Tittle</b></label></center>
+    <textarea class="form-control" id="exampleFormControlTextarea1" name="title" rows="1"></textarea>
+  </div>
+                    <div class="form-group">
+    <center><label for="exampleFormControlTextarea1"><b>Body</b></label></center>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="body"></textarea>
+  </div>
+                    <div class="form-group">
+   <center> <label for="exampleFormControlTextarea1"><b>Link</b></label></center>
+    <textarea class="form-control" id="exampleFormControlTextarea1" name="url" rows="1"></textarea>
+  </div>
+                    <center>
+                <div class="row">
+                    <div class="col-6">
+
+
+  <div class="form-group">
+    <label for="exampleFormControlSelect2">Sub Feeds</label>
+    <select multiple class="form-control " id="exampleFormControlSelect2" name="sub_feed">
+      <option class="px-5">🐂 Bull News</option>
+      <option class="px-5">🐻 Bear News</option>
+      <option class="px-5">🤖 Bot Tweaking</option>
+      <option class="px-5">📰 Political News</option>
+        <option class="px-5">💩 Shitcoins & News</option>
+    </select>
+  </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="col-6">
+                             <label for="exampleFormControlTextarea1">Main Pair</label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="1" name="Main_Pair"></textarea>
+  </div>
+                        <div class="col-6">
+                             <label for="exampleFormControlTextarea1">Altcoin</label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="1" name="Altcoin"></textarea>
+
+  </div>
+
+                        </div>
+
+                    </div>
+
+                        </center>
+                    <div class="row">
+
+
+                    <div class="col-6">
+
+                    </div>
+                    <div class="col-6">
+                                       <center><input type="submit" value="post" name="post" class="btn btn-success">
+</center>
+                    </div>
+
+</div>
+                    <br/>
+
+            </form>
+            </div>
+        </div>
+        <div class="col-3 card">
+               <div class="card bg-info">
+                 <center>Community</center>
+               </div>
+                <center>Potluck</center>
+            <br/>
+            <div class="card bg-warning">
+                 <center>Rules</center>
+               </div>
+            <ul class="list-unstyled">
+                <li><center><b>Basics to Interacting Online</b></center>
+    <ul>
+      <li>Only Post the Same Link or Post Once </li>
+      <li>Properly Tittle & Designate a Sub Feed</li>
+      <li>Add as much context clues as possible</li>
+      <li>Try and Contribute Value not Trash</li>
+    </ul>
+
+            </li>
+            </ul>
+            <br/>
+
+        </div>
+    </div>
+
+{% endblock %}

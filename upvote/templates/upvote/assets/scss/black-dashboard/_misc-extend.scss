@@ -1,0 +1,170 @@
+.card {
+  .map-title {
+    color: $white-color;
+  }
+
+    .table {
+      tr td {
+        p.title {
+          padding-top: 7px;
+          margin-bottom: 0;
+        }
+      }
+    }
+
+
+  &.card-chart {
+    .gmnoprint,
+    .gm-style-cc {
+      display: none !important;
+    }
+  }
+}
+
+.main-panel .navbar .navbar-brand{
+  position: relative;
+}
+
+@media screen and (min-width: 400px){
+  .card.card-lock {
+    margin-top: 13vh;
+  }
+}
+
+
+// documentation
+
+.bd-docs {
+
+  h1,h2,h3,h4,h5,h6,p,ul li,ol li{
+    color:#2c2c2c;
+  }
+
+
+  .bd-content>table>thead>tr>th {
+    color: #222a42;
+
+  }
+
+  .blockquote, .blockquote p, .card p{
+    color: rgba($white-color,0.8);
+  }
+  .bd-example {
+    background: linear-gradient(#1e1e2f,#1e1e24);
+
+  }
+
+  .navbar {
+    border-top: none;
+
+    .navbar-nav .nav-link {
+      color: rgba(255,255,255,.8) !important;
+    }
+  }
+
+  .bd-example {
+    .btn .badge {
+      display: inline-block;
+    }
+
+    .tim-icons{
+      color: $white-color;
+    }
+
+    .popover .popover-header {
+    color: hsla(0,0%,71%,.6);
+  }
+
+
+    .popover-body {
+      p {
+        color: #212529;
+      }
+    }
+
+    &.tooltip-demo p{
+      color: rgba($white-color,.8);
+    }
+  }
+
+  .card.card-body,
+  .card .card-body {
+    color: hsla(0,0%,100%,.8);
+  }
+
+  label,
+  .form-check {
+    color: hsla(0,0%,100%,.8);
+  }
+
+  .form-check + .btn {
+    margin-top: 20px;
+  }
+
+  .bd-example,
+  table {
+    thead th {
+      color: hsla(0,0%,100%,.8);
+    }
+
+    h1, h2, h3, h4, h5, h6,
+    .h1, .h2, .h3, .h4, .h5, .h6 {
+      color: hsla(0,0%,100%,.8);
+    }
+
+    .datepicker{
+      thead th, table thead th,.tim-icons{
+        color: $primary-color;
+      }
+
+    }
+
+    .picker-switch .tim-icons{
+      color: $primary-color;
+    }
+  }
+}
+
+
+.breadcrumb{
+    background: $black-states-color;
+   .breadcrumb-item{
+    &::before{
+      color: $white-color;
+    }
+    &.active{
+      color: $white-color;
+    }
+  }
+}
+
+
+@media screen and (max-width: 968px){
+  .lock-page,
+  .login-page,
+  .pricing-page,
+  .register-page {
+    .navbar {
+      .navbar-wrapper .navbar-toggle {
+        display: none !important;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  div.dataTables_paginate ul.pagination{
+    .page-item:first-of-type,
+    .page-item:nth-of-type(2),
+    .page-item:nth-of-type(8),
+    .page-item:last-of-type {
+       display: none !important;
+     }
+  }
+
+}
+
+.modal.show .modal-dialog {
+  -webkit-transform: translate(0,30%);
+  transform: translate(0,30%);
+}
