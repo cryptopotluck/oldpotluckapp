@@ -16,4 +16,4 @@ def index(request):
         message = ''
 
     form = VotingForm()
-    return render(request, 'survey.html', {'form': form, 'message': message})
+    return render(request, 'polling.html', {'form': form, 'message': message})

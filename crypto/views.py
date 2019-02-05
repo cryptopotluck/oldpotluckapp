@@ -6,7 +6,6 @@ from rest_framework.response import Response
 from upvote.models import post
 
 
-
 # Create your views here.
 @login_required
 def news(request):
@@ -21,6 +20,7 @@ def news(request):
     api = json.loads(api_request.content)
 
     return render(request, 'home.html', {'api': api, 'price': price})
+
 
 @login_required
 def prices(request):
@@ -38,7 +38,7 @@ def prices(request):
         posts = post.objects.filter(Altcoin=quote).order_by('-pub_date')
         mainp = post.objects.filter(Main_Pair=quote).order_by('-votes_total')
 
-        return render(request, 'prices.html', {'quote': quote, 'crypto': crypto,  'posts': posts, 'mainp':mainp})
+        return render(request, 'prices.html', {'quote': quote, 'crypto': crypto, 'posts': posts, 'mainp': mainp})
 
 
 
@@ -67,6 +67,7 @@ class ChartData(APIView):
         }
 
         return Response(data)
+
 
 @login_required
 def fourcharts(request):

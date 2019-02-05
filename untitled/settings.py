@@ -44,7 +44,10 @@ INSTALLED_APPS = [
     'crypto',
     'rest_framework',
     'pollingapp',
-    'upvote'
+    'upvote',
+    'pollingapp2',
+    'othersignals',
+
 
 ]
 

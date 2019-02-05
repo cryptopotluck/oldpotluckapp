@@ -26,6 +26,8 @@ urlpatterns = [
     path('news/', include('crypto.urls')),
     path('vote/', include('pollingapp.urls')),
     path('potluck/', include('upvote.urls')),
+    path('ballet/', include('pollingapp2.urls')),
+    path('signals/', include('othersignals.urls')),
 
 ]
 

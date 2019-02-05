@@ -1,0 +1,35 @@
+{% extends "blog/base.html" %}
+{% block content %}
+<div class="row">
+<div class="card container-fluid">
+     <iframe class="container-fluid h-auto" align="right" height="650" src="https://tucsky.github.io/SignificantTrades/">
+</iframe>
+<br/>
+</div>
+
+</div>
+    <br/>
+    <div class="row">
+<div class="col-9">
+
+</div>
+        <div class="col-3">
+          <center>
+        <button class="btn btn-outline-danger">
+    <a class="btn-outline-danger" href="{% url 'tokenmonitor' %}">Back</a>
+</button>
+
+
+
+
+
+       <button class="btn btn-outline-success">
+    <a class="btn-outline-success" href="{% url 'rsialerts' %}">Next</a>
+</button></center>
+
+        </div>
+
+    </div>
+
+
+{% endblock %}

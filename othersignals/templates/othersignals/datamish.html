@@ -1,0 +1,35 @@
+{% extends "blog/base.html" %}
+{% block content %}
+<div class="row">
+<div class="card container-fluid">
+     <iframe class="container-fluid h-auto" align="right" height="650" src="https://datamish.com/d/000000004/btcusd?refresh=20s&orgId=1">
+</iframe>
+<br/>
+</div>
+
+</div>
+    <br/>
+    <div class="row">
+<div class="col-9">
+
+</div>
+        <div class="col-3">
+          <center>
+        <button class="btn btn-outline-danger" href="">
+    <a class="btn-outline-danger" href="{% url 'bitcoinity_app' %}">Back</a>
+</button>
+
+
+
+
+
+       <button class="btn btn-outline-success">
+    <a class="btn-outline-success" href="{% url 'cryptowatch' %}">Next</a>
+</button></center>
+
+        </div>
+
+    </div>
+
+
+{% endblock %}
